@@ -1,5 +1,5 @@
 from appwrite.client import Client
-import os
+import os,json
 from .worker import eatUrl
 
 # This is your Appwrite function
@@ -26,7 +26,7 @@ def main(context):
         # `ctx.res.send()` dispatches a string back to the client
         return context.res.send("Hello, World!")
     #if context.req.method == "POST":
-    post_body = context.req.body
+    post_body = json.dumps(context.req.body)
     url_link = post_body["content"]
     url_sum_data = eatUrl(url_link)
     return context.res.json(url_sum_data)
