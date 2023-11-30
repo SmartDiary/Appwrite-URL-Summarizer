@@ -1,6 +1,6 @@
 from appwrite.client import Client
 import os
-import worker
+import .worker
 
 # This is your Appwrite function
 # It's executed each time we get a request
