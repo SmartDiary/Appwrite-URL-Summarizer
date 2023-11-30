@@ -1,6 +1,6 @@
 from appwrite.client import Client
 import os
-import .worker
+from .worker import eatUrl
 
 # This is your Appwrite function
 # It's executed each time we get a request
@@ -28,7 +28,7 @@ def main(context):
     #if context.req.method == "POST":
     post_body = conext.req.body
     url_link = post_body["content"]
-    url_sum_data = worker.eatUrl(url_link)
+    url_sum_data = eatUrl(url_link)
     return context.res.json(url_sum_data)
     
 
