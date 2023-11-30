@@ -1,1 +1,4 @@
 appwrite
+openai==v0.28.1
+langchain
+tiktoken
