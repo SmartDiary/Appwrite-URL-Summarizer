@@ -1,6 +1,6 @@
 from appwrite.client import Client
 import os
-
+import worker
 
 # This is your Appwrite function
 # It's executed each time we get a request
@@ -25,6 +25,13 @@ def main(context):
         # Send a response with the res object helpers
         # `ctx.res.send()` dispatches a string back to the client
         return context.res.send("Hello, World!")
+
+    if context.req.method == "POST":
+        post_body = conext.req.body
+        url_link = post_body["content"]
+        url_sum_data = worker.eatUrl(url_link)
+        return context.res.json(url_sum_data)
+    
 
     # `ctx.res.json()` is a handy helper for sending JSON
     return context.res.json(
