@@ -26,6 +26,9 @@ def main(context):
         # `ctx.res.send()` dispatches a string back to the client
         return context.res.send("Hello, World!")
     #if context.req.method == "POST":
+    context.log("connecting....")
+    body_req = context.req.body
+    context.log(body_req)
     post_body = json.dumps(context.req.body)
     context.log(post_body)
     url_link = post_body["content"]
