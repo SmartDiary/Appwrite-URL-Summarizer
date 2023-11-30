@@ -27,6 +27,7 @@ def main(context):
         return context.res.send("Hello, World!")
     #if context.req.method == "POST":
     post_body = json.dumps(context.req.body)
+    context.log(post_body)
     url_link = post_body["content"]
     url_sum_data = eatUrl(url_link)
     return context.res.json(url_sum_data)
