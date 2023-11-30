@@ -29,7 +29,7 @@ def main(context):
     context.log("connecting....")
     body_req = context.req.body
     context.log(body_req)
-    post_body = json.dumps(context.req.body)
+    post_body = json.loads(body_req)
     context.log(post_body)
     url_link = post_body["content"]
     url_sum_data = eatUrl(url_link)
