@@ -1,3 +1,15 @@
+# ⚡ Python URL Summerizer
+Request format:
+{
+ "content":"url" 
+} 
+
+Takes in a url and automatically summerizes it's contents. Returns a json structure in the format
+{
+  "title":"url title", 
+  "content" :"url summary" 
+} 
+
 # ⚡ Python Starter Function
 
 A simple starter function. Edit `src/main.py` to get started and create something awesome! 🚀
